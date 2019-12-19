@@ -1,0 +1,56 @@
+{
+  "name": "sql-generater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "docs": "typedoc --out ./docs --target ES6 --mode file ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shigarashi1/sql-generater.git"
+  },
+  "author": "sigarashi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shigarashi1/sql-generater/issues"
+  },
+  "homepage": "https://github.com/shigarashi1/sql-generater#readme",
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*": "prettier --write",
+    "*.{css,scss}": "stylelint --fix",
+    "*.{ts,tsx}": [
+      "tslint -p ./tsconfig.json --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "date-fns": "^2.8.1",
+    "mysql": "^2.17.1",
+    "ramda": "^0.26.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "@types/date-fns": "^2.6.0",
+    "@types/jest": "^24.0.24",
+    "@types/node": "^12.12.21",
+    "@types/ramda": "^0.26.38",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.15.5"
+  }
+}
