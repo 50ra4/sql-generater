@@ -1,6 +1,10 @@
 import { BaseQuery } from './base';
-import { TTargetColumn, TTableName } from '../types';
+import { TTargetColumn, TTableName, TDataType } from '../types';
 import { wrapSingleQuotation } from '../helpers';
+
+type TColumn = Omit<TTargetColumn, 'asName' | 'value'> & {
+  value: TDataType;
+};
 
 export class InsertQuery extends BaseQuery {
   protected get columnStr(): string {
@@ -18,6 +22,7 @@ export class InsertQuery extends BaseQuery {
     const q = this._columns
       .map(({ value }) => {
         if (typeof value === 'undefined') {
+          // setで防いでるから、起きえないけど
           throw new Error('Insert must set columns value property.');
         }
         return wrapSingleQuotation(value);
@@ -26,7 +31,7 @@ export class InsertQuery extends BaseQuery {
     return `(${q})`;
   }
 
-  column(params: TTargetColumn | TTargetColumn[]) {
+  column(params: TColumn | TColumn[]) {
     return super.column(params);
   }
 

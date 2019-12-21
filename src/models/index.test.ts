@@ -14,7 +14,7 @@ describe('SelectQuery', () => {
     const result = new SelectQuery('users')
       .column('id')
       .column([{ columnName: 'name' }, { columnName: 'age' }])
-      .column({ columnName: 'sex', replacedName: 'seibetu' })
+      .column({ columnName: 'sex', asName: 'seibetu' })
       .where('id', '>=', 1)
       .where('age', '<=', 18)
       .orderBy('id', 'desc')

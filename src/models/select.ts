@@ -11,12 +11,10 @@ export class SelectQuery extends BaseQuery {
   protected get columnStr(): string {
     return this._columns.length < 1
       ? '*'
-      : this._columns
-          .map(({ columnName, replacedName }) => (!replacedName ? columnName : `${columnName} AS ${replacedName}`))
-          .join(', ');
+      : this._columns.map(({ columnName, asName }) => (!asName ? columnName : `${columnName} AS ${asName}`)).join(', ');
   }
 
-  column(params: string | string[] | TColumn | TColumn[]) {
+  column(params: string | TColumn | Array<string | TColumn>) {
     return super.column(params);
   }
 
