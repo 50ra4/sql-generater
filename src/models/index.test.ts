@@ -24,20 +24,37 @@ describe('SelectQuery', () => {
 });
 
 describe('DeleteQuery', () => {
-  const EXPECTED = "DELETE FROM users WHERE id > '1' AND hasDeleted = 1;";
-
-  it.todo('条件通りに');
+  const EXPECTED = "DELETE FROM users WHERE 1 = 1 AND name = 'hoge' AND hasDeleted = 1;";
+  it('条件通りのDELETE文を返却', () => {
+    const result = new DeleteQuery('users') //
+      .where('name', '=', 'hoge')
+      .where('hasDeleted', '=', 1).query;
+    expect(result).toBe(EXPECTED);
+  });
 });
 
 describe('InsertQuery', () => {
-  const EXPECTED = 'INSERT INTO users (id, name, age, sex) VALUES ( 1, "fuga", 15, "WOMEN" );';
-
-  it.todo('');
-  const a = '';
+  const EXPECTED = "INSERT INTO users (id, name, age, sex) VALUES (1, 'fuga', 15, 'WOMEN');";
+  it('条件通りのINSERT文を返却', () => {
+    const result = new InsertQuery('users') //
+      .column({ columnName: 'id', value: 1 })
+      .column([
+        { columnName: 'name', value: 'fuga' },
+        { columnName: 'age', value: 15 },
+        { columnName: 'sex', value: 'WOMEN' },
+      ]).query;
+    expect(result).toBe(EXPECTED);
+  });
 });
 
 describe('UpdateQuery', () => {
-  const EXPECTED = 'UPDATE users SET sex = "WOMAN" WHERE id = 1;';
-
-  it.todo('');
+  const EXPECTED = "UPDATE users SET age = 15, name = 'sadako' WHERE 1 = 1 AND id > 1 AND sex = 'WOMAN';";
+  it('条件通りのUPDATE文を返却', () => {
+    const result = new UpdateQuery('users') //
+      .column({ columnName: 'age', value: 15 })
+      .column([{ columnName: 'name', value: 'sadako' }])
+      .where('id', '>', 1)
+      .where('sex', '=', 'WOMAN').query;
+    expect(result).toBe(EXPECTED);
+  });
 });

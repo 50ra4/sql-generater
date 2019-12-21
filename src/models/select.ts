@@ -1,4 +1,7 @@
-import { TTableName, BaseQuery } from './base';
+import { BaseQuery } from './base';
+import { TTableName, TTargetColumn } from '../types';
+
+type TColumn = Omit<TTargetColumn, 'value'>;
 
 export class SelectQuery extends BaseQuery {
   constructor(tableName: TTableName) {
@@ -11,6 +14,10 @@ export class SelectQuery extends BaseQuery {
       : this._columns
           .map(({ columnName, replacedName }) => (!replacedName ? columnName : `${columnName} AS ${replacedName}`))
           .join(', ');
+  }
+
+  column(params: string | string[] | TColumn | TColumn[]) {
+    return super.column(params);
   }
 
   get query() {

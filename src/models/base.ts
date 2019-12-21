@@ -1,14 +1,10 @@
-export type TTableName = 'users' | 'projects';
+import { TDataType, TTargetColumn, TTableName } from '../types';
+import { wrapSingleQuotation } from '../helpers';
 
 type TCommand = 'INSERT' | 'SELECT' | 'UPDATE' | 'DELETE';
-type TDataType = string | number | Date;
 type TWhereFilter = '=' | '>' | '<' | '>=' | '<=';
 type TOrderStr = 'asc' | 'desc';
-type TTargetColumn = {
-  columnName: string;
-  replacedName?: string;
-  value?: TDataType;
-};
+
 type TWhereCondition = {
   columnName: string;
   opStr: TWhereFilter;
@@ -26,7 +22,6 @@ type TInitializeOption = {
 };
 
 const toTargetColumn = (v: string | TTargetColumn): TTargetColumn => (typeof v !== 'string' ? v : { columnName: v });
-const wrapSingleQuotation = (v: TDataType): string => (typeof v === 'string' ? `'${v}'` : `${v}`);
 
 export abstract class BaseQuery {
   protected _option: TInitializeOption;
@@ -42,7 +37,7 @@ export abstract class BaseQuery {
 
   public column(params: string | TTargetColumn | Array<string | TTargetColumn>) {
     if (!this._option.canAddColumn) {
-      throw Error('Can not add Columns.');
+      throw new Error('Can not add Columns.');
     }
     if (Array.isArray(params)) {
       this._columns = [...this._columns, ...params.map(toTargetColumn)];
@@ -54,7 +49,7 @@ export abstract class BaseQuery {
 
   public where(columnName: string, opStr: TWhereFilter, value: string | number) {
     if (!this._option.canWhere) {
-      throw Error('Can not add Where Conditions.');
+      throw new Error('Can not add Where Conditions.');
     }
     this._where.push({ columnName, opStr, value });
     return this;
@@ -72,7 +67,7 @@ export abstract class BaseQuery {
 
   public orderBy(columnName: string, orderStr: TOrderStr = 'asc') {
     if (!this._option.canOrderBy) {
-      throw Error('Can not add OrderBy Conditions.');
+      throw new Error('Can not add OrderBy Conditions.');
     }
     this._orderBy.push({ columnName, orderStr });
     return this;
