@@ -4,6 +4,8 @@ import { TTableName, TTargetColumn } from '../types';
 type TColumn = Omit<TTargetColumn, 'value'>;
 
 export class SelectQuery extends BaseQuery {
+  private _groupBy: string[] = [];
+
   constructor(tableName: TTableName) {
     super(tableName, { sql: 'SELECT', canWhere: true, canOrderBy: true, canAddColumn: true });
   }
@@ -18,9 +20,23 @@ export class SelectQuery extends BaseQuery {
     return super.column(params);
   }
 
+  private get groupByStr(): string {
+    return this._groupBy.length < 1 ? '' : `GROUP BY ${this._groupBy.join(', ')}`;
+  }
+
+  groupBy(columnName: string) {
+    this._groupBy.push(columnName);
+    return this;
+  }
+
   get query() {
     return (
-      [`SELECT ${this.columnStr} FROM ${this._tableName}`, this.whereStr, this.orderByStr]
+      [
+        `SELECT ${this.columnStr} FROM ${this._tableName}`, //
+        this.whereStr,
+        this.groupByStr,
+        this.orderByStr,
+      ]
         .filter((v) => !!v)
         .join(' ') + ';'
     );

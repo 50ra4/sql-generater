@@ -2,13 +2,13 @@ import { TDataType, TTargetColumn, TTableName } from '../types';
 import { wrapSingleQuotation } from '../helpers';
 
 type TCommand = 'INSERT' | 'SELECT' | 'UPDATE' | 'DELETE';
-type TWhereFilter = '=' | '>' | '<' | '>=' | '<=';
+type TWhereFilter = '=' | '>' | '<' | '>=' | '<=' | '!=' | 'LIKE' | 'NOT LIKE' | 'IS' | 'IS NOT' | 'IN' | 'NOT IN';
 type TOrderStr = 'asc' | 'desc';
 
 type TWhereCondition = {
   columnName: string;
   opStr: TWhereFilter;
-  value: TDataType;
+  value: TDataType | string[] | number[];
 };
 type TOrderByCondition = {
   columnName: string;
@@ -47,7 +47,7 @@ export abstract class BaseQuery {
     return this;
   }
 
-  public where(columnName: string, opStr: TWhereFilter, value: string | number) {
+  public where(columnName: string, opStr: TWhereFilter, value: TDataType | string[] | number[]) {
     if (!this._option.canWhere) {
       throw new Error('Can not add Where Conditions.');
     }

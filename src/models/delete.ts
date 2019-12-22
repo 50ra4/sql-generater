@@ -11,6 +11,13 @@ export class DeleteQuery extends BaseQuery {
   }
 
   get query() {
-    return [`DELETE FROM ${this._tableName}`, this.whereStr].join(' ') + ';';
+    return (
+      [
+        `DELETE FROM ${this._tableName}`, //
+        this.whereStr,
+      ]
+        .filter((v) => !!v)
+        .join(' ') + ';'
+    );
   }
 }

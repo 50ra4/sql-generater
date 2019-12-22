@@ -31,6 +31,16 @@ export class UpdateQuery extends BaseQuery {
   }
 
   get query() {
-    return ['UPDATE', this._tableName, 'SET', this.columnStr, this.whereStr].join(' ') + ';';
+    return (
+      [
+        'UPDATE', //
+        this._tableName,
+        'SET',
+        this.columnStr,
+        this.whereStr,
+      ]
+        .filter((v) => !!v)
+        .join(' ') + ';'
+    );
   }
 }

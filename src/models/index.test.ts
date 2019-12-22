@@ -1,16 +1,25 @@
 import { SelectQuery, DeleteQuery, InsertQuery, UpdateQuery } from '.';
 
 describe('SelectQuery', () => {
-  const EXPECT1 = "SELECT * FROM users WHERE 1 = 1 AND name = 'hoge';";
-  const EXPECT2 =
-    'SELECT id, name, age, sex AS seibetu FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age asc;';
+  it('GROUP BYで返却', () => {
+    const EXPECT1 =
+      'SELECT sex, AVG(height) AS avgHeight, AVG(weight) AS avgWeight FROM users WHERE 1 = 1 AND age >= 18 AND age <= 22 AND hasDeleted != 1 GROUP BY sex;';
 
-  it('カラム指定がない場合、*で返却', () => {
-    const result = new SelectQuery('users').where('name', '=', 'hoge').query;
+    const result = new SelectQuery('users')
+      .column('sex')
+      .column({ columnName: 'AVG(height)', asName: 'avgHeight' })
+      .column({ columnName: 'AVG(weight)', asName: 'avgWeight' })
+      .where('age', '>=', 18)
+      .where('age', '<=', 22)
+      .where('hasDeleted', '!=', 1)
+      .groupBy('sex').query;
     expect(result).toBe(EXPECT1);
   });
 
   it('カラム指定がある場合、設定されて返却される', () => {
+    const EXPECT2 =
+      'SELECT id, name, age, sex AS seibetu FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age asc;';
+
     const result = new SelectQuery('users')
       .column('id')
       .column([{ columnName: 'name' }, { columnName: 'age' }])
@@ -20,6 +29,15 @@ describe('SelectQuery', () => {
       .orderBy('id', 'desc')
       .orderBy('age').query;
     expect(result).toBe(EXPECT2);
+  });
+
+  it('IS NOT, INを利用したSELECT文を返却する', () => {
+    const EXPECT3 = 'SELECT * FROM users WHERE 1 = 1 AND sex IS NOT NULL AND age IN (12,15,18,22) ORDER BY id asc;';
+    const result = new SelectQuery('users')
+      .where('sex', 'IS NOT', 'NULL')
+      .where('age', 'IN', [12, 15, 18, 22])
+      .orderBy('id').query;
+    expect(result).toBe(EXPECT3);
   });
 });
 

@@ -40,6 +40,16 @@ export class InsertQuery extends BaseQuery {
   }
 
   get query() {
-    return ['INSERT INTO', this._tableName, this.columnStr, 'VALUES', this.columnValue].join(' ') + ';';
+    return (
+      [
+        'INSERT INTO', //
+        this._tableName,
+        this.columnStr,
+        'VALUES',
+        this.columnValue,
+      ]
+        .filter((v) => !!v)
+        .join(' ') + ';'
+    );
   }
 }
