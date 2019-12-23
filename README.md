@@ -22,4 +22,6 @@ SELECT * FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age;
 - src/index.ts
 を参照されたし。
 
+※ なお、ちゃんと動くSQL文かは確認していない。
+
 API Documentation created By typedoc [Check github pages](https://shigarashi1.github.io/sql-generater/)
