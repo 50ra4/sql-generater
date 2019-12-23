@@ -4,14 +4,15 @@ FirebaseのFireStore風にSQLコマンドを書けるようにしたやつ。
 
 例えば、
 ```
-SELECT * FROM users WHERE 1 = 1 AND sex IS NOT NULL AND age IN (12,15,18,22) ORDER BY id;
+SELECT * FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age;
 ```
 とSQL文を書きたきゃ、
 ```
-const result = new SelectQuery('users')
-      .where('sex', 'IS NOT', 'NULL')
-      .where('age', 'IN', [12, 15, 18, 22])
-      .orderBy('id').query
+    const result = new SelectQuery('users')
+      .where('id', '>=', 1)
+      .where('age', '<=', 18)
+      .orderBy('id', 'desc')
+      .orderBy('age').query;
 ```
 と書く。
 

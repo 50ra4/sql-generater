@@ -18,12 +18,12 @@ describe('SelectQuery', () => {
 
   it('カラム指定がある場合、設定されて返却される', () => {
     const EXPECT2 =
-      'SELECT id, name, age, sex AS seibetu FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age;';
+      'SELECT id, name, age, sex AS gender FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age;';
 
     const result = new SelectQuery('users')
       .column('id')
       .column([{ columnName: 'name' }, { columnName: 'age' }])
-      .column({ columnName: 'sex', asName: 'seibetu' })
+      .column({ columnName: 'sex', asName: 'gender' })
       .where('id', '>=', 1)
       .where('age', '<=', 18)
       .orderBy('id', 'desc')
