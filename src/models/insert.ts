@@ -7,6 +7,10 @@ type TColumn = Omit<TTargetColumn, 'asName' | 'value'> & {
 };
 
 export class InsertQuery extends BaseQuery {
+  constructor(tableName: TTableName) {
+    super(tableName);
+  }
+
   protected get columnStr(): string {
     if (this._columns.length < 1) {
       throw new Error('Insert must add columns.');
@@ -22,7 +26,7 @@ export class InsertQuery extends BaseQuery {
     const q = this._columns
       .map(({ value }) => {
         if (typeof value === 'undefined') {
-          // setで防いでるから、起きえないけど
+          // setで必須だから起きえないけど
           throw new Error('Insert must set columns value property.');
         }
         return wrapSingleQuotation(value);
@@ -35,8 +39,8 @@ export class InsertQuery extends BaseQuery {
     return super.column(params);
   }
 
-  constructor(tableName: TTableName) {
-    super(tableName, { sql: 'INSERT', canWhere: false, canOrderBy: false, canAddColumn: true });
+  where() {
+    return this;
   }
 
   get query() {

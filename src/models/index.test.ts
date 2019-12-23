@@ -18,7 +18,7 @@ describe('SelectQuery', () => {
 
   it('カラム指定がある場合、設定されて返却される', () => {
     const EXPECT2 =
-      'SELECT id, name, age, sex AS seibetu FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age asc;';
+      'SELECT id, name, age, sex AS seibetu FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age;';
 
     const result = new SelectQuery('users')
       .column('id')
@@ -32,7 +32,7 @@ describe('SelectQuery', () => {
   });
 
   it('IS NOT, INを利用したSELECT文を返却する', () => {
-    const EXPECT3 = 'SELECT * FROM users WHERE 1 = 1 AND sex IS NOT NULL AND age IN (12,15,18,22) ORDER BY id asc;';
+    const EXPECT3 = 'SELECT * FROM users WHERE 1 = 1 AND sex IS NOT NULL AND age IN (12,15,18,22) ORDER BY id;';
     const result = new SelectQuery('users')
       .where('sex', 'IS NOT', 'NULL')
       .where('age', 'IN', [12, 15, 18, 22])

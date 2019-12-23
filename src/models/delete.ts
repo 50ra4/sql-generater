@@ -2,12 +2,16 @@ import { BaseQuery } from './base';
 import { TTableName } from '../types';
 
 export class DeleteQuery extends BaseQuery {
+  constructor(tableName: TTableName) {
+    super(tableName);
+  }
+
   protected get columnStr(): string {
     throw new Error('Method not implemented.');
   }
 
-  constructor(tableName: TTableName) {
-    super(tableName, { sql: 'DELETE', canWhere: true, canOrderBy: false, canAddColumn: false });
+  column() {
+    return this;
   }
 
   get query() {

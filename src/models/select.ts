@@ -1,13 +1,19 @@
 import { BaseQuery } from './base';
 import { TTableName, TTargetColumn } from '../types';
 
+type TOrderStr = 'asc' | 'desc';
+type TOrderByCondition = {
+  columnName: string;
+  orderStr: TOrderStr;
+};
 type TColumn = Omit<TTargetColumn, 'value'>;
 
 export class SelectQuery extends BaseQuery {
+  private _orderBy: TOrderByCondition[] = [];
   private _groupBy: string[] = [];
 
   constructor(tableName: TTableName) {
-    super(tableName, { sql: 'SELECT', canWhere: true, canOrderBy: true, canAddColumn: true });
+    super(tableName);
   }
 
   protected get columnStr(): string {
@@ -18,6 +24,21 @@ export class SelectQuery extends BaseQuery {
 
   column(params: string | TColumn | Array<string | TColumn>) {
     return super.column(params);
+  }
+
+  public orderBy(columnName: string, orderStr: TOrderStr = 'asc') {
+    this._orderBy.push({ columnName, orderStr });
+    return this;
+  }
+
+  private get orderByStr(): string {
+    if (this._orderBy.length < 1) {
+      return '';
+    }
+    const q = this._orderBy
+      .map(({ columnName, orderStr }) => (orderStr !== 'asc' ? `${columnName} ${orderStr}` : columnName))
+      .join(', ');
+    return `ORDER BY ${q}`;
   }
 
   private get groupByStr(): string {

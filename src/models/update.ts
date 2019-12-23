@@ -7,6 +7,10 @@ type TColumn = Omit<TTargetColumn, 'asName' | 'value'> & {
 };
 
 export class UpdateQuery extends BaseQuery {
+  constructor(tableName: TTableName) {
+    super(tableName);
+  }
+
   protected get columnStr(): string {
     if (this._columns.length < 1) {
       throw new Error('UpdateQuery must add columns.');
@@ -14,7 +18,7 @@ export class UpdateQuery extends BaseQuery {
     return this._columns
       .map(({ columnName, value }) => {
         if (typeof value === 'undefined') {
-          // setで防いでるから、起きえないけど
+          // setできないから起きえないけど
           throw new Error('UpdateQuery must set columns value property.');
         }
         return `${columnName} = ${wrapSingleQuotation(value)}`;
@@ -24,10 +28,6 @@ export class UpdateQuery extends BaseQuery {
 
   column(params: TColumn | TColumn[]) {
     return super.column(params);
-  }
-
-  constructor(tableName: TTableName) {
-    super(tableName, { sql: 'UPDATE', canWhere: true, canOrderBy: false, canAddColumn: true });
   }
 
   get query() {
