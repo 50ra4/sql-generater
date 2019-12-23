@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "test": "jest -c ./jest.config.js --watchAll",
-    "test:not-watch": "jest -c ./jest.config.js --watchAll",
+    "test:not-watch": "jest -c ./jest.config.js",
     "docs": "typedoc --out ./docs --target ES6 --mode file ./src"
   },
   "repository": {
