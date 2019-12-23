@@ -30,7 +30,6 @@
   },
   "lint-staged": {
     "src/*": "prettier --write",
-    "*.{css,scss}": "stylelint --fix",
     "*.{ts,tsx}": [
       "tslint -p ./tsconfig.json --fix",
       "git add"
