@@ -32,10 +32,12 @@ describe('SelectQuery', () => {
   });
 
   it('IS NOT, INを利用したSELECT文を返却する', () => {
-    const EXPECT3 = 'SELECT * FROM users WHERE 1 = 1 AND sex IS NOT NULL AND age IN (12,15,18,22) ORDER BY id;';
+    const EXPECT3 =
+      "SELECT * FROM users WHERE 1 = 1 AND sex IS NOT NULL AND age IN (12,15,18,22) AND name IN ('あ','い') ORDER BY id;";
     const result = new SelectQuery('users')
       .where('sex', 'IS NOT', 'NULL')
       .where('age', 'IN', [12, 15, 18, 22])
+      .where('name', 'IN', ['あ', 'い'])
       .orderBy('id').query;
     expect(result).toBe(EXPECT3);
   });

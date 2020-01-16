@@ -1,18 +1,12 @@
-import { TDataType } from '../types';
+import { TDataType, TTargetColumn } from '../types';
 
-const isStringArray = (arr: any): arr is string[] => Array.isArray(arr) && arr.length > 0 && typeof arr[0] === 'string';
-const isNumberArray = (arr: any): arr is number[] => Array.isArray(arr) && arr.length > 0 && typeof arr[0] === 'number';
+export const isWrapValue = (v: TDataType): boolean => typeof v === 'string' && v !== 'NULL';
 
-export const wrapSingleQuotation = (v: TDataType | string[] | number[]): string => {
-  if (typeof v === 'string' && v !== 'NULL') {
-    return `'${v}'`;
-  }
-  // TODO: 配列の型変換が上手くいかず。。。
-  if (isStringArray(v)) {
-    return `(${v.map(wrapSingleQuotation)})`;
-  }
-  if (isNumberArray(v)) {
-    return `(${v.map(wrapSingleQuotation)})`;
-  }
-  return `${v}`;
-};
+export const wrapBracket = (v: string): string => `(${v})`;
+
+export const wrapSingleQuotation = (v: TDataType): string => (isWrapValue(v) ? `'${v}'` : `${v}`);
+
+export const toTargetColumn = (v: string | TTargetColumn): TTargetColumn =>
+  typeof v !== 'string' ? v : { columnName: v };
+
+export const toArray = <T>(v: T | T[]): T[] => (Array.isArray(v) ? v : [v]);

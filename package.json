@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "ts-node ./src/test.ts",
     "test": "jest -c ./jest.config.js --watchAll",
     "test:not-watch": "jest -c ./jest.config.js",
     "docs": "typedoc --out ./docs --target ES6 --mode file ./src"
