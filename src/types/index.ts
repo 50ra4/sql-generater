@@ -1,4 +1,3 @@
-export type TTableName = 'users' | 'projects';
 export type TDataType = string | number | 'NULL';
 export type TTargetColumn = {
   columnName: string;

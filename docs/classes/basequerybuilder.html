@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DeleteQuery | sql-generater</title>
+	<title>BaseQueryBuilder | sql-query-builder</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">sql-generater</a>
+					<a href="../index.html" class="title">sql-query-builder</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,24 +56,41 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="deletequery.html">DeleteQuery</a>
+					<a href="basequerybuilder.html">BaseQueryBuilder</a>
 				</li>
 			</ul>
-			<h1>Class DeleteQuery</h1>
+			<h1>Class BaseQueryBuilder&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basequery.html" class="tsd-signature-type">BaseQuery</a>
+						<span class="target">BaseQueryBuilder</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">DeleteQuery</span>
+								<a href="insertquerybuilder.html" class="tsd-signature-type">InsertQueryBuilder</a>
+							</li>
+							<li>
+								<a href="selectquerybuilder.html" class="tsd-signature-type">SelectQueryBuilder</a>
+							</li>
+							<li>
+								<a href="updatequerybuilder.html" class="tsd-signature-type">UpdateQueryBuilder</a>
+							</li>
+							<li>
+								<a href="deletequerybuilder.html" class="tsd-signature-type">DeleteQueryBuilder</a>
 							</li>
 						</ul>
 					</li>
@@ -86,30 +103,30 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="deletequery.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="basequerybuilder.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
+						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="deletequery.html#_columns" class="tsd-kind-icon">_columns</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="deletequery.html#_tablename" class="tsd-kind-icon">_table<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="deletequery.html#_where" class="tsd-kind-icon">_where</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="basequerybuilder.html#_columns" class="tsd-kind-icon">_columns</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="basequerybuilder.html#_tablename" class="tsd-kind-icon">_table<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="basequerybuilder.html#_where" class="tsd-kind-icon">_where</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="deletequery.html#columnstr" class="tsd-kind-icon">column<wbr>Str</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite"><a href="deletequery.html#query" class="tsd-kind-icon">query</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="deletequery.html#wherestr" class="tsd-kind-icon">where<wbr>Str</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected"><a href="basequerybuilder.html#columnstr" class="tsd-kind-icon">column<wbr>Str</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="basequerybuilder.html#query" class="tsd-kind-icon">query</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected"><a href="basequerybuilder.html#wherestr" class="tsd-kind-icon">where<wbr>Str</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="deletequery.html#column" class="tsd-kind-icon">column</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="deletequery.html#where" class="tsd-kind-icon">where</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="basequerybuilder.html#column" class="tsd-kind-icon">column</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="basequerybuilder.html#where" class="tsd-kind-icon">where</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,117 +134,110 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Delete<wbr>Query<span class="tsd-signature-symbol">(</span>tableName<span class="tsd-signature-symbol">: </span><a href="../globals.html#ttablename" class="tsd-signature-type">TTableName</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="deletequery.html" class="tsd-signature-type">DeleteQuery</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Base<wbr>Query<wbr>Builder<span class="tsd-signature-symbol">(</span>tableName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="basequerybuilder.html" class="tsd-signature-type">BaseQueryBuilder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/delete.ts#L4">models/delete.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L14">models/base.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>tableName: <a href="../globals.html#ttablename" class="tsd-signature-type">TTableName</a></h5>
+									<h5>tableName: <span class="tsd-signature-type">T</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="deletequery.html" class="tsd-signature-type">DeleteQuery</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="basequerybuilder.html" class="tsd-signature-type">BaseQueryBuilder</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="_columns" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _columns</h3>
 					<div class="tsd-signature tsd-kind-icon">_columns<span class="tsd-signature-symbol">:</span> <a href="../globals.html#ttargetcolumn" class="tsd-signature-type">TTargetColumn</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#_columns">_columns</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/base.ts#L18">models/base.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L13">models/base.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="_tablename" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _table<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">_table<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">_table<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#_tablename">_tableName</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/base.ts#L17">models/base.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L12">models/base.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="_where" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _where</h3>
 					<div class="tsd-signature tsd-kind-icon">_where<span class="tsd-signature-symbol">:</span> <a href="../globals.html#twherecondition" class="tsd-signature-type">TWhereCondition</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#_where">_where</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/base.ts#L19">models/base.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L14">models/base.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected">
 					<a name="columnstr" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> column<wbr>Str</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> columnStr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#columnstr">columnStr</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/delete.ts#L9">models/delete.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L25">models/base.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="query" class="tsd-anchor"></a>
 					<h3>query</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> query<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#query">query</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/delete.ts#L17">models/delete.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L46">models/base.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected">
 					<a name="wherestr" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> where<wbr>Str</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> whereStr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#wherestr">whereStr</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/base.ts#L41">models/base.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L32">models/base.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -237,36 +247,40 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="column" class="tsd-anchor"></a>
 					<h3>column</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">column<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">column<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#ttargetcolumn" class="tsd-signature-type">TTargetColumn</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#ttargetcolumn" class="tsd-signature-type">TTargetColumn</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#column">column</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/delete.ts#L13">models/delete.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L20">models/base.ts:20</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#ttargetcolumn" class="tsd-signature-type">TTargetColumn</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#ttargetcolumn" class="tsd-signature-type">TTargetColumn</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="where" class="tsd-anchor"></a>
 					<h3>where</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>columnName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, opStr<span class="tsd-signature-symbol">: </span><a href="../globals.html#twherefilter" class="tsd-signature-type">TWhereFilter</a>, value<span class="tsd-signature-symbol">: </span><a href="../globals.html#tdatatype" class="tsd-signature-type">TDataType</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="basequery.html">BaseQuery</a>.<a href="basequery.html#where">where</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/d926f45/src/models/base.ts#L36">models/base.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L27">models/base.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -297,62 +311,62 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="basequery.html" class="tsd-kind-icon">Base<wbr>Query</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="deletequery.html" class="tsd-kind-icon">Delete<wbr>Query</a>
+					<li class="current tsd-kind-class tsd-has-type-parameter">
+						<a href="basequerybuilder.html" class="tsd-kind-icon">Base<wbr>Query<wbr>Builder</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="deletequery.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="basequerybuilder.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="deletequery.html#_columns" class="tsd-kind-icon">_columns</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="basequerybuilder.html#_columns" class="tsd-kind-icon">_columns</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="deletequery.html#_tablename" class="tsd-kind-icon">_table<wbr>Name</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="basequerybuilder.html#_tablename" class="tsd-kind-icon">_table<wbr>Name</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="deletequery.html#_where" class="tsd-kind-icon">_where</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="basequerybuilder.html#_where" class="tsd-kind-icon">_where</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="deletequery.html#columnstr" class="tsd-kind-icon">column<wbr>Str</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected">
+								<a href="basequerybuilder.html#columnstr" class="tsd-kind-icon">column<wbr>Str</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
-								<a href="deletequery.html#query" class="tsd-kind-icon">query</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="basequerybuilder.html#query" class="tsd-kind-icon">query</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="deletequery.html#wherestr" class="tsd-kind-icon">where<wbr>Str</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-protected">
+								<a href="basequerybuilder.html#wherestr" class="tsd-kind-icon">where<wbr>Str</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="deletequery.html#column" class="tsd-kind-icon">column</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="basequerybuilder.html#column" class="tsd-kind-icon">column</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="deletequery.html#where" class="tsd-kind-icon">where</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="basequerybuilder.html#where" class="tsd-kind-icon">where</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="insertquery.html" class="tsd-kind-icon">Insert<wbr>Query</a>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="deletequerybuilder.html" class="tsd-kind-icon">Delete<wbr>Query<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="insertquerybuilder.html" class="tsd-kind-icon">Insert<wbr>Query<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="selectquerybuilder.html" class="tsd-kind-icon">Select<wbr>Query<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="selectquery.html" class="tsd-kind-icon">Select<wbr>Query</a>
+						<a href="sqlqueryfactory.html" class="tsd-kind-icon">Sql<wbr>Query<wbr>Factory</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="updatequery.html" class="tsd-kind-icon">Update<wbr>Query</a>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="updatequerybuilder.html" class="tsd-kind-icon">Update<wbr>Query<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="../globals.html#tcolumn" class="tsd-kind-icon">TColumn</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#tdatatype" class="tsd-kind-icon">TData<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-not-exported">
-						<a href="../globals.html#tinitializeoption" class="tsd-kind-icon">TInitialize<wbr>Option</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="../globals.html#torderbycondition" class="tsd-kind-icon">TOrder<wbr>ByCondition</a>
@@ -372,17 +386,17 @@
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="../globals.html#twherefilter" class="tsd-kind-icon">TWhere<wbr>Filter</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#isnumberarray" class="tsd-kind-icon">is<wbr>Number<wbr>Array</a>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#iswrapvalue" class="tsd-kind-icon">is<wbr>Wrap<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#isstringarray" class="tsd-kind-icon">is<wbr>String<wbr>Array</a>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#toarray" class="tsd-kind-icon">to<wbr>Array</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#start" class="tsd-kind-icon">start</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
+					<li class=" tsd-kind-function">
 						<a href="../globals.html#totargetcolumn" class="tsd-kind-icon">to<wbr>Target<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#wrapbracket" class="tsd-kind-icon">wrap<wbr>Bracket</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#wrapsinglequotation" class="tsd-kind-icon">wrap<wbr>Single<wbr>Quotation</a>

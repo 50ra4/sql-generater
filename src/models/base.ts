@@ -1,4 +1,4 @@
-import { TDataType, TTargetColumn, TTableName } from '../types';
+import { TDataType, TTargetColumn } from '../types';
 import { wrapSingleQuotation, toArray, toTargetColumn, wrapBracket } from '../helpers';
 
 type TWhereFilter = '=' | '>' | '<' | '>=' | '<=' | '!=' | 'LIKE' | 'NOT LIKE' | 'IS' | 'IS NOT' | 'IN' | 'NOT IN';
@@ -8,12 +8,12 @@ type TWhereCondition = {
   value: TDataType | Array<string | number>;
 };
 
-export abstract class BaseQuery {
-  protected _tableName: string;
+export abstract class BaseQueryBuilder<T> {
+  protected _tableName: T;
   protected _columns: TTargetColumn[] = [];
   protected _where: TWhereCondition[] = [];
 
-  constructor(tableName: TTableName) {
+  constructor(tableName: T) {
     this._tableName = tableName;
   }
 

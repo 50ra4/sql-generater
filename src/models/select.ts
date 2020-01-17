@@ -1,5 +1,5 @@
-import { BaseQuery } from './base';
-import { TTableName, TTargetColumn } from '../types';
+import { BaseQueryBuilder } from './base';
+import { TTargetColumn } from '../types';
 
 type TOrderStr = 'asc' | 'desc';
 type TOrderByCondition = {
@@ -8,11 +8,11 @@ type TOrderByCondition = {
 };
 type TColumn = Omit<TTargetColumn, 'value'>;
 
-export class SelectQuery extends BaseQuery {
+export class SelectQueryBuilder<T> extends BaseQueryBuilder<T> {
   private _orderBy: TOrderByCondition[] = [];
   private _groupBy: string[] = [];
 
-  constructor(tableName: TTableName) {
+  constructor(tableName: T) {
     super(tableName);
   }
 

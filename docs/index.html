@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>sql-generater</title>
+	<title>sql-query-builder</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">sql-generater</a>
+					<a href="index.html" class="title">sql-query-builder</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> sql-generater</h1>
+			<h1> sql-query-builder</h1>
 		</div>
 	</div>
 </header>
@@ -67,40 +67,23 @@
 				<a href="#sql-generater" id="sql-generater" style="color: inherit; text-decoration: none;">
 					<h1>sql-generater</h1>
 				</a>
-				<table>
-					<thead>
-						<tr>
-							<th align="left">command</th>
-							<th align="left">columns</th>
-							<th align="left">where</th>
-							<th align="left">order by</th>
-						</tr>
-					</thead>
-					<tbody><tr>
-							<td align="left">select</td>
-							<td align="left">true</td>
-							<td align="left">true</td>
-							<td align="left">true</td>
-						</tr>
-						<tr>
-							<td align="left">delete</td>
-							<td align="left">false</td>
-							<td align="left">true</td>
-							<td align="left">false</td>
-						</tr>
-						<tr>
-							<td align="left">insert</td>
-							<td align="left">true</td>
-							<td align="left">false</td>
-							<td align="left">false</td>
-						</tr>
-						<tr>
-							<td align="left">update</td>
-							<td align="left">true</td>
-							<td align="left">true</td>
-							<td align="left">false</td>
-						</tr>
-				</tbody></table>
+				<p>FirebaseのFireStore風にSQLコマンドを書けるようにしたやつ。</p>
+				<p>例えば、</p>
+				<pre><code>SELECT * <span class="hljs-keyword">FROM</span><span class="hljs-built_in"> users </span>WHERE 1 = 1 <span class="hljs-keyword">AND</span> id &gt;= 1 <span class="hljs-keyword">AND</span> age &lt;= 18 ORDER BY id desc, age;</code></pre><p>とSQL文を書きたきゃ、</p>
+				<pre><code>    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">new</span> SelectQuery(<span class="hljs-string">'users'</span>)
+      .<span class="hljs-keyword">where</span>(<span class="hljs-string">'id'</span>, <span class="hljs-string">'&gt;='</span>, <span class="hljs-number">1</span>)
+      .<span class="hljs-keyword">where</span>(<span class="hljs-string">'age'</span>, <span class="hljs-string">'&lt;='</span>, <span class="hljs-number">18</span>)
+      .orderBy(<span class="hljs-string">'id'</span>, <span class="hljs-string">'desc'</span>)
+      .orderBy(<span class="hljs-string">'age'</span>).query;</code></pre><p>と書く。</p>
+				<p>詳しくは</p>
+				<ul>
+					<li>src/models/index.test.ts
+					か</li>
+					<li>src/index.ts
+					を参照されたし。</li>
+				</ul>
+				<p>※ なお、ちゃんと動くSQL文かは確認していない。</p>
+				<p>API Documentation created By typedoc <a href="https://shigarashi1.github.io/sql-generater/">Check github pages</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -113,29 +96,29 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/basequery.html" class="tsd-kind-icon">Base<wbr>Query</a>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/basequerybuilder.html" class="tsd-kind-icon">Base<wbr>Query<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/deletequerybuilder.html" class="tsd-kind-icon">Delete<wbr>Query<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/insertquerybuilder.html" class="tsd-kind-icon">Insert<wbr>Query<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/selectquerybuilder.html" class="tsd-kind-icon">Select<wbr>Query<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/deletequery.html" class="tsd-kind-icon">Delete<wbr>Query</a>
+						<a href="classes/sqlqueryfactory.html" class="tsd-kind-icon">Sql<wbr>Query<wbr>Factory</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/insertquery.html" class="tsd-kind-icon">Insert<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/selectquery.html" class="tsd-kind-icon">Select<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/updatequery.html" class="tsd-kind-icon">Update<wbr>Query</a>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/updatequerybuilder.html" class="tsd-kind-icon">Update<wbr>Query<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="globals.html#tcolumn" class="tsd-kind-icon">TColumn</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#tdatatype" class="tsd-kind-icon">TData<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-not-exported">
-						<a href="globals.html#tinitializeoption" class="tsd-kind-icon">TInitialize<wbr>Option</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="globals.html#torderbycondition" class="tsd-kind-icon">TOrder<wbr>ByCondition</a>
@@ -155,17 +138,17 @@
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="globals.html#twherefilter" class="tsd-kind-icon">TWhere<wbr>Filter</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#isnumberarray" class="tsd-kind-icon">is<wbr>Number<wbr>Array</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#iswrapvalue" class="tsd-kind-icon">is<wbr>Wrap<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#isstringarray" class="tsd-kind-icon">is<wbr>String<wbr>Array</a>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#toarray" class="tsd-kind-icon">to<wbr>Array</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#start" class="tsd-kind-icon">start</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
+					<li class=" tsd-kind-function">
 						<a href="globals.html#totargetcolumn" class="tsd-kind-icon">to<wbr>Target<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#wrapbracket" class="tsd-kind-icon">wrap<wbr>Bracket</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#wrapsinglequotation" class="tsd-kind-icon">wrap<wbr>Single<wbr>Quotation</a>

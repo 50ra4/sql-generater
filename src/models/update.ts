@@ -1,13 +1,13 @@
-import { BaseQuery } from './base';
-import { TTableName, TTargetColumn, TDataType } from '../types';
+import { BaseQueryBuilder } from './base';
+import { TTargetColumn, TDataType } from '../types';
 import { wrapSingleQuotation } from '../helpers';
 
 type TColumn = Omit<TTargetColumn, 'asName' | 'value'> & {
   value: TDataType;
 };
 
-export class UpdateQuery extends BaseQuery {
-  constructor(tableName: TTableName) {
+export class UpdateQueryBuilder<T> extends BaseQueryBuilder<T> {
+  constructor(tableName: T) {
     super(tableName);
   }
 

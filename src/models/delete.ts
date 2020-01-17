@@ -1,8 +1,7 @@
-import { BaseQuery } from './base';
-import { TTableName } from '../types';
+import { BaseQueryBuilder } from './base';
 
-export class DeleteQuery extends BaseQuery {
-  constructor(tableName: TTableName) {
+export class DeleteQueryBuilder<T> extends BaseQueryBuilder<T> {
+  constructor(tableName: T) {
     super(tableName);
   }
 
