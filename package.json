@@ -1,6 +1,6 @@
 {
   "name": "sql-query-builder",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -36,9 +36,6 @@
       "git add"
     ]
   },
-  "dependencies": {
-    "ts-node": "^8.5.4"
-  },
   "devDependencies": {
     "@types/jest": "^24.0.24",
     "@types/node": "^12.12.21",
@@ -47,6 +44,7 @@
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
+    "ts-node": "^8.6.2",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.15.5",
