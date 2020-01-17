@@ -2,8 +2,10 @@
   "name": "sql-query-builder",
   "version": "1.0.4",
   "description": "",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "test": "jest -c ./jest.config.js --watchAll",
     "test:not-watch": "jest -c ./jest.config.js",
     "docs": "typedoc --out ./docs --target ES6 --mode file ./src"
@@ -35,8 +37,7 @@
     ]
   },
   "dependencies": {
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.3"
+    "ts-node": "^8.5.4"
   },
   "devDependencies": {
     "@types/jest": "^24.0.24",
@@ -48,6 +49,7 @@
     "ts-jest": "^24.2.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.15.5"
+    "typedoc": "^0.15.5",
+    "typescript": "^3.7.5"
   }
 }
