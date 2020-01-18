@@ -7,3 +7,6 @@ tsconfig.json
 tslint.json
 *.test.*
 src/
+docs/
+/.vscode
+prettier.config.js

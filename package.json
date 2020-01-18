@@ -7,10 +7,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest -c ./jest.config.js --watchAll",
-    "test:not-watch": "jest -c ./jest.config.js",
+    "test:nowatch": "jest -c ./jest.config.js",
     "clean": "rm -rf ./dist",
     "patch": "npm version patch && npm publish",
-    "republish": "npm run test:not-watch && npm run clean && npm run build && npm run patch",
+    "republish": "npm run test:nowatch && npm run clean && npm run build && npm run patch",
     "docs": "typedoc --out ./docs --target ES6 --mode file ./src"
   },
   "repository": {
@@ -55,6 +55,7 @@
   },
   "keywords": [
     "sql",
+    "query",
     "builder",
     "firestore",
     "tools",
