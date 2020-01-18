@@ -1,5 +1,4 @@
 import { SqlQueryFactory } from '.';
-export type TTableName = 'users' | 'projects';
 
 describe('SelectQuery', () => {
   it('GROUP BYで返却', () => {
