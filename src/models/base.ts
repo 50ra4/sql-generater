@@ -8,12 +8,12 @@ type TWhereCondition = {
   value: TDataType | Array<string | number>;
 };
 
-export abstract class BaseQueryBuilder<T> {
-  protected _tableName: T;
+export abstract class BaseQueryBuilder {
+  protected _tableName: string;
   protected _columns: TTargetColumn[] = [];
   protected _where: TWhereCondition[] = [];
 
-  constructor(tableName: T) {
+  constructor(tableName: string) {
     this._tableName = tableName;
   }
 

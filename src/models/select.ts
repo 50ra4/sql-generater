@@ -8,11 +8,11 @@ type TOrderByCondition = {
 };
 type TColumn = Omit<TTargetColumn, 'value'>;
 
-export class SelectQueryBuilder<T> extends BaseQueryBuilder<T> {
+export class SelectQueryBuilder extends BaseQueryBuilder {
   private _orderBy: TOrderByCondition[] = [];
   private _groupBy: string[] = [];
 
-  constructor(tableName: T) {
+  constructor(tableName: string) {
     super(tableName);
   }
 

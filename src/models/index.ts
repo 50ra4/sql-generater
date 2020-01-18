@@ -5,16 +5,16 @@ import { DeleteQueryBuilder } from './delete';
 
 export { InsertQueryBuilder, SelectQueryBuilder, UpdateQueryBuilder, DeleteQueryBuilder };
 export class SqlQueryFactory {
-  static select<T>(tableName: T) {
+  static select(tableName: string) {
     return new SelectQueryBuilder(tableName);
   }
-  static update<T>(tableName: T) {
+  static update(tableName: string) {
     return new UpdateQueryBuilder(tableName);
   }
-  static insert<T>(tableName: T) {
+  static insert(tableName: string) {
     return new InsertQueryBuilder(tableName);
   }
-  static delete<T>(tableName: T) {
+  static delete(tableName: string) {
     return new DeleteQueryBuilder(tableName);
   }
 }

@@ -1,7 +1,7 @@
 import { BaseQueryBuilder } from './base';
 
-export class DeleteQueryBuilder<T> extends BaseQueryBuilder<T> {
-  constructor(tableName: T) {
+export class DeleteQueryBuilder extends BaseQueryBuilder {
+  constructor(tableName: string) {
     super(tableName);
   }
 

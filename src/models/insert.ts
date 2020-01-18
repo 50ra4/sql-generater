@@ -6,8 +6,8 @@ type TColumn = Omit<TTargetColumn, 'asName' | 'value'> & {
   value: TDataType;
 };
 
-export class InsertQueryBuilder<T> extends BaseQueryBuilder<T> {
-  constructor(tableName: T) {
+export class InsertQueryBuilder extends BaseQueryBuilder {
+  constructor(tableName: string) {
     super(tableName);
   }
 
