@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UpdateQueryBuilder | sql-query-builder</title>
+	<title>UpdateQueryBuilder | sql-query-builder-like-firestore</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">sql-query-builder</a>
+					<a href="../index.html" class="title">sql-query-builder-like-firestore</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -59,26 +59,18 @@
 					<a href="updatequerybuilder.html">UpdateQueryBuilder</a>
 				</li>
 			</ul>
-			<h1>Class UpdateQueryBuilder&lt;T&gt;</h1>
+			<h1>Class UpdateQueryBuilder</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>T</h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basequerybuilder.html" class="tsd-signature-type">BaseQueryBuilder</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="basequerybuilder.html" class="tsd-signature-type">BaseQueryBuilder</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">UpdateQueryBuilder</span>
@@ -129,20 +121,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Update<wbr>Query<wbr>Builder<span class="tsd-signature-symbol">(</span>tableName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="updatequerybuilder.html" class="tsd-signature-type">UpdateQueryBuilder</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Update<wbr>Query<wbr>Builder<span class="tsd-signature-symbol">(</span>tableName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="updatequerybuilder.html" class="tsd-signature-type">UpdateQueryBuilder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/update.ts#L9">models/update.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/update.ts#L9">models/update.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>tableName: <span class="tsd-signature-type">T</span></h5>
+									<h5>tableName: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="updatequerybuilder.html" class="tsd-signature-type">UpdateQueryBuilder</a></h4>
@@ -159,18 +151,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#_columns">_columns</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L13">models/base.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/base.ts#L13">models/base.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="_tablename" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _table<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">_table<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
+					<div class="tsd-signature tsd-kind-icon">_table<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#_tablename">_tableName</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L12">models/base.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/base.ts#L12">models/base.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -181,7 +173,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#_where">_where</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L14">models/base.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/base.ts#L14">models/base.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -199,7 +191,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#columnstr">columnStr</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/update.ts#L14">models/update.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/update.ts#L14">models/update.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -217,7 +209,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#query">query</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/update.ts#L33">models/update.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/update.ts#L33">models/update.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -235,7 +227,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#wherestr">whereStr</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L32">models/base.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/base.ts#L32">models/base.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -256,7 +248,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#column">column</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/update.ts#L29">models/update.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/update.ts#L29">models/update.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -280,7 +272,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="basequerybuilder.html">BaseQueryBuilder</a>.<a href="basequerybuilder.html#where">where</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/243c6c3/src/models/base.ts#L27">models/base.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/shigarashi1/sql-generater/blob/f1fdf58/src/models/base.ts#L27">models/base.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -311,16 +303,16 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-has-type-parameter">
+					<li class=" tsd-kind-class">
 						<a href="basequerybuilder.html" class="tsd-kind-icon">Base<wbr>Query<wbr>Builder</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
+					<li class=" tsd-kind-class">
 						<a href="deletequerybuilder.html" class="tsd-kind-icon">Delete<wbr>Query<wbr>Builder</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
+					<li class=" tsd-kind-class">
 						<a href="insertquerybuilder.html" class="tsd-kind-icon">Insert<wbr>Query<wbr>Builder</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
+					<li class=" tsd-kind-class">
 						<a href="selectquerybuilder.html" class="tsd-kind-icon">Select<wbr>Query<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -328,7 +320,7 @@
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-has-type-parameter">
+					<li class="current tsd-kind-class">
 						<a href="updatequerybuilder.html" class="tsd-kind-icon">Update<wbr>Query<wbr>Builder</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
@@ -373,9 +365,6 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="../globals.html#torderstr" class="tsd-kind-icon">TOrder<wbr>Str</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#ttablename" class="tsd-kind-icon">TTable<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#ttargetcolumn" class="tsd-kind-icon">TTarget<wbr>Column</a>
