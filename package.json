@@ -52,5 +52,13 @@
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.15.5",
     "typescript": "^3.7.5"
-  }
+  },
+  "keywords": [
+    "sql",
+    "builder",
+    "firestore",
+    "tools",
+    "node.js",
+    "typescript"
+  ]
 }
