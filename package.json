@@ -8,6 +8,9 @@
     "build": "tsc -p tsconfig.json",
     "test": "jest -c ./jest.config.js --watchAll",
     "test:not-watch": "jest -c ./jest.config.js",
+    "clean": "rm -rf ./dist",
+    "patch": "npm version patch && npm publish",
+    "republish": "npm run clean && npm run build && npm run patch",
     "docs": "typedoc --out ./docs --target ES6 --mode file ./src"
   },
   "repository": {
