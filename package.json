@@ -42,6 +42,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.24",
     "@types/node": "^12.12.21",
+    "@types/sqlstring": "^2.2.1",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
@@ -61,5 +62,8 @@
     "tools",
     "node.js",
     "typescript"
-  ]
+  ],
+  "dependencies": {
+    "sqlstring": "2.3.1"
+  }
 }
