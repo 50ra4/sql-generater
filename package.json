@@ -23,10 +23,6 @@
     "url": "https://github.com/shigarashi1/sql-generater/issues"
   },
   "homepage": "https://github.com/shigarashi1/sql-generater#readme",
-  "engines": {
-    "node": "12.13.1",
-    "npm": "6.12.1"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
