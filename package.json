@@ -18,7 +18,7 @@
     "url": "git+https://github.com/shigarashi1/sql-generater.git"
   },
   "author": "sigarashi",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/shigarashi1/sql-generater/issues"
   },
