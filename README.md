@@ -1,27 +1,35 @@
-# sql-generater
+# sql-query-builder-like-firestore
 
-FirebaseのFireStore風にSQLコマンドを書けるようにしたやつ。
+## What is "sql-query-builder-like-firestore"?
 
-例えば、
+It’s a class which enables you to write the “SQL Query” like a firebase’s firestore.
+
+## Installation
+
+npm install
+```
+npm i sql-query-builder-like-firestore
+```
+And Import
+```
+import { SqlQueryFactory } from 'sql-query-builder-like-firestore';
+```
+
+## Usage
+
+API Documentation created By typedoc [Check github pages](https://shigarashi1.github.io/sql-generater/)
+
+If you want to write such a SQL query
 ```
 SELECT * FROM users WHERE 1 = 1 AND id >= 1 AND age <= 18 ORDER BY id desc, age;
 ```
-とSQL文を書きたきゃ、
+you can be achieved by writing as follows...
 ```
-    const result = new SelectQuery('users')
-      .where('id', '>=', 1)
-      .where('age', '<=', 18)
-      .orderBy('id', 'desc')
-      .orderBy('age').query;
+import { SqlQueryFactory } from 'sql-query-builder-like-firestore';
+
+const result = SqlQueryFactory.SelectQuery('users')
+    .where('id', '>=', 1)
+    .where('age', '<=', 18)
+    .orderBy('id', 'desc')
+    .orderBy('age').query;
 ```
-と書く。
-
-詳しくは
-- src/models/index.test.ts
-か
-- src/index.ts
-を参照されたし。
-
-※ なお、ちゃんと動くSQL文かは確認していない。
-
-API Documentation created By typedoc [Check github pages](https://shigarashi1.github.io/sql-generater/)
